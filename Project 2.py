@@ -87,10 +87,8 @@ class SpamDetector:
         X = self.df['message']   # X = the "inputs": the raw text of every message
         y = self.df['label']     # y = the "answers": spam or ham for every message
  
-        # Randomly divide messages into a training group (80%) and a
-        # testing group (20%). random_state=42 just makes the random
-        # split repeatable - rerun the script, get the same split.
-        # stratify=y keeps the same spam/ham ratio in both groups.
+        # Randomly divide messages into a training group (80%) and testing group (20%). random_state=42 just makes the random
+        # split repeatable - rerun the script, get the same split. stratify=y keeps the same spam/ham ratio in both groups.
 
         X_train, X_test, y_train, y_test = train_test_split(
             X, y, test_size=test_size, random_state=42, stratify=y
